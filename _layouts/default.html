@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <nav>
+        <h1 class="title">Matty's Musings</h1>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Archive</a>
+        </div>
+    </nav>
+    <main>
+      {{ content }}
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme =
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+        hljs.highlightAll();
+    </script>
+  </body>
+</html

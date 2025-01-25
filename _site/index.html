@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matty's Musings</title>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <nav>
+        <h1 class="title">Matty's Musings</h1>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Archive</a>
+        </div>
+    </nav>
+    <main>
+      <main>
+  <ul class="post-list">
+    
+    <li class="post-item">
+      <h2 class="post-title">
+        <a href="/2025/01/24/a-very-standard-command-promt.html">Building Resilient Systems</a>
+      </h2>
+      <div class="post-meta">2025-01-24</div>
+      
+    </li>
+    
+  </ul>
+</main>
+
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme =
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+        hljs.highlightAll();
+    </script>
+  </body>
+</html

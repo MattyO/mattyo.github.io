@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building Resilient Systems</title>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+    <nav>
+        <h1 class="title">Matty's Musings</h1>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Archive</a>
+        </div>
+    </nav>
+    <main>
+      <p>###Note: Example content only</p>
+
+<h1 id="building-resilient-systems">Building Resilient Systems</h1>
+
+<p>In distributed systems, failure is not just a possibility—it’s an inevitability. The key to building resilient systems lies in embracing this reality and designing with failure in mind. This approach, often called “chaos engineering,” involves deliberately introducing failures to test system resilience.</p>
+
+<p>Modern architectures require us to think differently about system boundaries and failure modes. Gone are the days when we could rely on simple primary-backup failover mechanisms.</p>
+
+<h2 id="key-principles-of-resilient-systems">Key Principles of Resilient Systems</h2>
+
+<ol>
+  <li>Design for failure by implementing circuit breakers and fallback mechanisms</li>
+  <li>Implement robust monitoring and alerting systems</li>
+  <li>Practice regular disaster recovery scenarios</li>
+</ol>
+
+<p><img src="/api/placeholder/800/400" alt="System Architecture Diagram" /></p>
+
+<h2 id="common-failure-patterns">Common Failure Patterns</h2>
+
+<ul>
+  <li>Cascading failures due to tightly coupled services</li>
+  <li>Resource exhaustion from unbounded queues</li>
+  <li>Network partitions in distributed systems</li>
+</ul>
+
+<h2 id="example-implementation">Example Implementation</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">CircuitBreaker</span> <span class="p">{</span>
+    <span class="nf">constructor</span><span class="p">(</span><span class="nx">failureThreshold</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">resetTimeout</span> <span class="o">=</span> <span class="mi">60000</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">failureCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">failureThresholGkkkd</span> <span class="o">=</span> <span class="nx">failureThreshold</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">resetTimeout</span> <span class="o">=</span> <span class="nx">resetTimeout</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">CLOSED</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">async</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">OPEN</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Circuit breaker is OPEN</span><span class="dl">'</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">fn</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">failureCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">failureCount</span><span class="o">++</span><span class="p">;</span>
+            <span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">failureCount</span> <span class="o">&gt;=</span> <span class="k">this</span><span class="p">.</span><span class="nx">failureThreshold</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">OPEN</span><span class="dl">'</span><span class="p">;</span>
+                <span class="nf">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">CLOSED</span><span class="dl">'</span><span class="p">;</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">failureCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                <span class="p">},</span> <span class="k">this</span><span class="p">.</span><span class="nx">resetTimeout</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme =
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+        }
+        hljs.highlightAll();
+    </script>
+  </body>
+</html
