@@ -225,50 +225,56 @@ blockquote {
     color: var(--secondary);
 }
 
-        .post-list {
-            list-style: none;
-            padding: 0;
-        }
+.post-list {
+    list-style: none;
+    padding: 0;
+}
 
-        .post-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            border: 1px solid var(--border);
-        }
+.post-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border);
+}
 
-        .post-item:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-        }
+.post-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
 
-        .post-title {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.5rem;
-            margin: 0 0 0.5rem 0;
-        }
+.post-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
 
-        .post-title a {
-            color: var(--accent);
-            text-decoration: none;
-            background: linear-gradient(to right, var(--accent), var(--accent));
-            background-size: 0 2px;
-            background-position: 0 100%;
-            background-repeat: no-repeat;
-            transition: background-size 0.3s ease;
-        }
+.post-title a {
+    color: var(--accent);
+    text-decoration: none;
+    background: linear-gradient(to right, var(--accent), var(--accent));
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+}
 
-        .post-title a:hover {
-            background-size: 100% 2px;
-        }
+.post-title a:hover {
+    background-size: 100% 2px;
+}
 
-        .post-meta {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
+.post-meta {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
 
-        .post-excerpt {
-            margin: 0;
-        }
+.post-excerpt {
+    margin: 0;
+}
+
+.left {
+    float: left;
+
+    margin: 0 30px 30px 0 ;
+}
