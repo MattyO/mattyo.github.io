@@ -205,15 +205,17 @@ def request_session():
 This wrapper approach provides several benefits:
 - Controlled state and reset capabilities,
 - a wrapper is a better understood interface(a class vs python module internals)
-- Lazy initialization options
+- Lazy instantiation options to better control when thing get created
 - Clean interface for managing private objects
 - Transparent method passthrough
 
 Usage remains straightforward:
+
 ```python
 from client import request_session
 
 request_session().cookies.update({'test': 'cookie'})
+
 ```
 
 Thats it! Thanks for reading....
