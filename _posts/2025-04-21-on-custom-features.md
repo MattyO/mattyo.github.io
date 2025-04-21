@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "On custom features"
+draft: 'true'
+---
+
+#Note: Draft WIP!!!!
 ## My Response
 
 I generally agree with the post. It comes off a little blamey without many practical recommendations. He is headed down a positive line of thinking, and in the end, we would mostly agree with him if we all sat down and had more extended, more nuanced conversations.
