@@ -13,7 +13,7 @@ I don't agree with the first two takeaways at all.
 - You should choose to do a thing based on its merits or not.  The cost structure he mentioned earlier (it affects every sprint forever) will dwarf any amount you could charge.
 - Tracking time, effort, and opportunity cost is a fool's errand.  It's always turns into navel-gazing monopoly money in the past for me
 
-I do agree with his 3rd point.  But... If you are at the point where this is a new idea, I think this recommendation will be pretty unclear in how to do it. Even here in TD Slack, we all probably have different ideas about what observability and instrumentation mean.
+I do agree with his 3rd point.  But... If you are at the point where this is a new idea, I think this recommendation will be pretty unclear in how to do it. Even here in Slack, we all probably have different ideas about what observability and instrumentation mean.
 
 ## My response
 
