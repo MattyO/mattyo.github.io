@@ -45,5 +45,7 @@ I see the process of making stuff through the lenses of
 * Ensuring the system is one that regularly learns from itself **and remembers** .
 * Small 'p' plans.  Something quick, small, and easily adapts the inevitable changes through out a project. But a plan non-the-less.
 
+
 Thanks for reading!!!
+
 \- Matty
