@@ -28,22 +28,22 @@ Hi, I'm Matt (my friends call me Matty).  Below is a little bit about me, what I
 - I work as transparently as possible. I share work very, very early before it's normally ready to be accepted. Please let me know if this is overwhelming or distracting.
 - I examine problems - This can lead to slightly longer feedback cycles. This includes not only the problem space, but the many types of trade off that are present between possible solutions.
 - I ask a lot of questions. Your answers and perspectives are super important in helping us choose an approach and direction that works for both of us.
-- I believe in context, so I can sometimes be a little verbose.  About Me
+- I believe in context, so I can sometimes be a little verbose.
 
 ## Technical Details
 
 Are you a programmer that is intrested in how I think about the details related to making stuff? You are in luck. You have found the right section!
 
 I see the details around the bits mainly through the lenses of...
-* the 4 simple rules of design.
+* The 4 simple rules of design.
 * Many More Much Smaller Steps
 * Starting with the simplest thing that works.
 
 I see the process of making stuff through the lenses of
-* delivering smaller amounts of value sooner and more regularly
-* sustainable pace.
-* ensuring the system is one that regularly learns from itself **and remembers** .
-* small 'p' plans.
+* Delivering smaller amounts of value sooner and more regularly
+* Sustainable pace.
+* Ensuring the system is one that regularly learns from itself **and remembers** .
+* Small 'p' plans.  Something quick, small, and easily adapts the inevitable changes through out a project. But a plan non-the-less.
 
 Thanks for reading!!!
 \- Matty
