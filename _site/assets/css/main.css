@@ -334,4 +334,141 @@ svg {
   height: 50px;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-link {
+  display: flex;
+  height: 100%;
+  text-decoration: none;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h2 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0;
+}
+
+.tag {
+  font-size: 0.8rem;
+  font-family: "Inconsolata", monospace;
+  background: var(--code-bg);
+  color: var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.project-description {
+  color: var(--secondary);
+  margin: 0.75rem 0;
+}
+
+.project-view-label {
+  display: block;
+  margin-top: auto;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-card:hover .project-view-label {
+  opacity: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.9rem;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+.lab-section {
+  margin-bottom: 3rem;
+}
+
+.lab-section h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.lab-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.lab-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.lab-card h3 {
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+.lab-list {
+  list-style: none;
+  padding: 0;
+}
+
+.lab-list li {
+  margin: 0.75rem 0;
+  padding-left: 0;
+}
+
+.back-link {
+  margin-top: 3rem;
+}
+
+.back-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=main.css.map */
