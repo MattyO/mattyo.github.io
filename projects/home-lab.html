@@ -10,27 +10,65 @@ title: Home Lab
   </p>
 
   <section class="lab-section">
-    <h2>Infrastructure</h2>
+    <h2>Highlights</h2>
+    <ul class="lab-list">
+      <li><strong>Fully automated setup and configuration</strong> — reproducible infrastructure via Terraform and Ansible</li>
+      <li><strong>Real-time observability</strong> — Prometheus and Loki with logs from network devices and sFlow traffic analytics</li>
+      <li><strong>Segregated hosts via VLANs</strong> — air-gapped inference workloads</li>
+    </ul>
+  </section>
+
+  <div class="svg-pan-container" style="height: 500px;">
+    <object id="network-diagram" data="/assets/images/network-overview.drawio.svg" type="image/svg+xml" class="network-svg-object"></object>
+    <span class="pan-hint">drag to pan &middot; scroll to zoom</span>
+  </div>
+
+  <section class="lab-section">
+    <h2>Hardware</h2>
     <div class="lab-card-grid">
       <div class="lab-card">
-        <h3>Server Name</h3>
+        <h3>Refurbished Dell Blade Server</h3>
         <div class="lab-tags">
-          <span class="tag">proxmox</span>
-          <span class="tag">esxi</span>
+          <span class="tag">dell</span>
+          <span class="tag">blade</span>
+          <span class="tag">raid-5</span>
         </div>
         <p class="lab-description">
-          Hardware specs and what this server runs. Add CPU, RAM, storage details here.
+          3 TB RAID 5 storage, 125 GB RAM, CPU — placeholder
         </p>
       </div>
 
       <div class="lab-card">
-        <h3>Server Name</h3>
+        <h3>Fortinet F40</h3>
         <div class="lab-tags">
-          <span class="tag">proxmox</span>
-          <span class="tag">esxi</span>
+          <span class="tag">firewall</span>
+          <span class="tag">fortinet</span>
         </div>
         <p class="lab-description">
-          Hardware specs and what this server runs. Add CPU, RAM, storage details here.
+          Enterprise-grade firewall — network segmentation, threat protection, and VPN.
+        </p>
+      </div>
+
+      <div class="lab-card">
+        <h3>Cisco C1300</h3>
+        <div class="lab-tags">
+          <span class="tag">switch</span>
+          <span class="tag">cisco</span>
+          <span class="tag">sflow</span>
+        </div>
+        <p class="lab-description">
+          Managed switch — VLAN segmentation and sFlow traffic analytics.
+        </p>
+      </div>
+
+      <div class="lab-card">
+        <h3>FortiAP</h3>
+        <div class="lab-tags">
+          <span class="tag">wifi</span>
+          <span class="tag">fortinet</span>
+        </div>
+        <p class="lab-description">
+          Wireless access point — managed by FortiGate, VLAN-aware.
         </p>
       </div>
     </div>
@@ -39,38 +77,43 @@ title: Home Lab
   <section class="lab-section">
     <h2>Virtualization & Containers</h2>
     <ul class="lab-list">
-      <li><strong>Hypervisor:</strong> Placeholder — Proxmox / ESXi / VirtualBox</li>
-      <li><strong>Container Runtime:</strong> Placeholder — Docker / Podman / LXC</li>
-      <li><strong>Orchestration:</strong> Placeholder — Kubernetes / Nomad / Docker Compose</li>
+      <li><strong>Hypervisor / Container Runtime:</strong> Incus</li>
     </ul>
   </section>
 
   <section class="lab-section">
-    <h2>Networking</h2>
+    <h2>Orchestration</h2>
     <ul class="lab-list">
-      <li><strong>Router/Firewall:</strong> Placeholder — pfSense / OPNsense / Untangle</li>
-      <li><strong>Switch:</strong> Placeholder — Unifi / Mikrotik / TP-Link</li>
-      <li><strong>Wireless:</strong> Placeholder — AP details</li>
+      <li><strong>Terraform</strong> — infrastructure as code</li>
+      <li><strong>Ansible</strong> — configuration management</li>
     </ul>
   </section>
 
   <section class="lab-section">
-    <h2>Services & Software</h2>
+    <h2>Monitoring &amp; Observability</h2>
     <ul class="lab-list">
-      <li><strong>DNS:</strong> Placeholder — Pi-hole / AdGuard / BIND</li>
-      <li><strong>DHCP:</strong> Placeholder — details</li>
-      <li><strong>Monitoring:</strong> Placeholder — Grafana / Prometheus / Uptime Kuma</li>
-      <li><strong>Backup:</strong> Placeholder — details</li>
-      <li><strong>Certificates:</strong> Placeholder — Let's Encrypt / Traefik</li>
+      <li><strong>Prometheus</strong> — metrics collection</li>
+      <li><strong>Loki</strong> — log aggregation</li>
+      <li><strong>Network device logs</strong> — shipped to Loki</li>
+      <li><strong>sFlow</strong> — traffic observability</li>
     </ul>
-  </section>
 
-  <section class="lab-section">
-    <h2>Storage</h2>
-    <ul class="lab-list">
-      <li><strong>NAS:</strong> Placeholder — TrueNAS / OpenMediaVault / Synology</li>
-      <li><strong>Backup Storage:</strong> Placeholder — details</li>
-    </ul>
+    <div class="monitoring-gallery">
+      <div class="monitoring-img-wrapper">
+        <img id="ai-monitoring" src="/assets/images/ai-monitoring.png" alt="AI monitoring dashboard" class="monitoring-img">
+        <button class="monitoring-toggle" onclick="toggleMonitoring('ai-monitoring')">Show More</button>
+      </div>
+
+      <div class="monitoring-img-wrapper">
+        <img id="grafana-network-traffic" src="/assets/images/grafana-network-traffic.png" alt="Grafana network traffic" class="monitoring-img">
+        <button class="monitoring-toggle" onclick="toggleMonitoring('grafana-network-traffic')">Show More</button>
+      </div>
+
+      <div class="monitoring-img-wrapper">
+        <img id="host-overview" src="/assets/images/host-overview.png" alt="Host overview" class="monitoring-img">
+        <button class="monitoring-toggle" onclick="toggleMonitoring('host-overview')">Show More</button>
+      </div>
+    </div>
   </section>
 
   <div class="back-link">

@@ -27,6 +27,7 @@
         <div class="nav-links">
             <a href="/" class="active">Home</a>
             <a href="/projects/" class="">Projects</a>
+            <a href="/cv/" class="">CV</a>
             <!--
             <a href="#">About</a>
             <a href="#">Archive</a>
@@ -59,12 +60,46 @@
 
     </main>
 
+    <script src="/assets/js/svg-pan-zoom.min.js"></script>
     <script>
         function toggleTheme() {
             document.body.dataset.theme =
                 document.body.dataset.theme === 'dark' ? 'light' : 'dark';
         }
         hljs.highlightAll();
+
+        // Initialize svg-pan-zoom for object-embedded SVGs
+        document.querySelectorAll('.network-svg-object').forEach(obj => {
+            obj.addEventListener('load', function() {
+                svgPanZoom(this, {
+                    minZoom: 0.5,
+                    maxZoom: 10,
+                    zoomScaleSensitivity: 0.1,
+                    fit: true,
+                    center: true
+                });
+            });
+        });
+
+        // Monitoring image expand/collapse
+        function toggleMonitoring(imgId) {
+            const img = document.getElementById(imgId);
+            const wrapper = img.parentElement;
+            const btn = wrapper.querySelector('.monitoring-toggle');
+            if (wrapper.style.height === 'auto') {
+                wrapper.style.height = wrapper.dataset.initialHeight;
+                btn.textContent = 'Show More';
+            } else {
+                wrapper.style.height = 'auto';
+                btn.textContent = 'Show Less';
+            }
+        }
+
+        // Cache initial heights so JS doesn't hardcode them
+        document.querySelectorAll('.monitoring-img').forEach(img => {
+            const wrapper = img.parentElement;
+            wrapper.dataset.initialHeight = getComputedStyle(wrapper).height;
+        });
     </script>
   </body>
 </html
