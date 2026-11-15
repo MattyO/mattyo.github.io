@@ -14,7 +14,7 @@ title: Home Lab
     <ul class="lab-list">
       <li><strong>Fully automated setup and configuration</strong> — reproducible infrastructure via Terraform and Ansible</li>
       <li><strong>Real-time observability</strong> — Prometheus and Loki with logs from network devices and sFlow traffic analytics</li>
-      <li><strong>Segregated hosts via VLANs</strong> — air-gapped inference workloads</li>
+      <li><strong>Segregated hosts via VLANs</strong> — Network isolation across dedicated VLANs for home, work, AI, and server workloads</li>
     </ul>
   </section>
 
@@ -29,12 +29,10 @@ title: Home Lab
       <div class="lab-card">
         <h3>Refurbished Dell Blade Server</h3>
         <div class="lab-tags">
-          <span class="tag">dell</span>
-          <span class="tag">blade</span>
-          <span class="tag">raid-5</span>
+          <span class="tag">server</span>
         </div>
         <p class="lab-description">
-          3 TB RAID 5 storage, 125 GB RAM, CPU — placeholder
+          3 TB RAID 5 storage, 125 GB RAM, CPU — enough for now
         </p>
       </div>
 
@@ -54,7 +52,7 @@ title: Home Lab
         <div class="lab-tags">
           <span class="tag">switch</span>
           <span class="tag">cisco</span>
-          <span class="tag">sflow</span>
+          <span class="tag">L2/L3</span>
         </div>
         <p class="lab-description">
           Managed switch — VLAN segmentation and sFlow traffic analytics.
@@ -62,41 +60,34 @@ title: Home Lab
       </div>
 
       <div class="lab-card">
-        <h3>FortiAP</h3>
+        <h3>FS AP</h3>
         <div class="lab-tags">
           <span class="tag">wifi</span>
-          <span class="tag">fortinet</span>
         </div>
         <p class="lab-description">
-          Wireless access point — managed by FortiGate, VLAN-aware.
+          Wireless access point — VLAN-aware. provides multiple wans that further segregate connected devices to their correct vlans.
         </p>
       </div>
     </div>
   </section>
 
   <section class="lab-section">
-    <h2>Virtualization & Containers</h2>
-    <ul class="lab-list">
-      <li><strong>Hypervisor / Container Runtime:</strong> Incus</li>
-    </ul>
-  </section>
-
-  <section class="lab-section">
-    <h2>Orchestration</h2>
-    <ul class="lab-list">
-      <li><strong>Terraform</strong> — infrastructure as code</li>
-      <li><strong>Ansible</strong> — configuration management</li>
-    </ul>
+    <h2>Orchestration, Automation &amp; Containers</h2>
+    <p>
+      The platform runs on <strong>Incus</strong> as a unified hypervisor and container runtime, supporting both VMs and LXC containers.
+      Infrastructure is provisioned with <strong>Terraform</strong> for declarative network resources and host configuration,
+      and managed with <strong>Ansible</strong> for idempotent, agentless system provisioning and drift remediation.
+      Network segmentation is enforced at the switch layer via VLANs, with firewall policies applied per-segment.
+    </p>
   </section>
 
   <section class="lab-section">
     <h2>Monitoring &amp; Observability</h2>
-    <ul class="lab-list">
-      <li><strong>Prometheus</strong> — metrics collection</li>
-      <li><strong>Loki</strong> — log aggregation</li>
-      <li><strong>Network device logs</strong> — shipped to Loki</li>
-      <li><strong>sFlow</strong> — traffic observability</li>
-    </ul>
+    <p>
+      Full-stack observability is provided by <strong>Prometheus</strong> for metrics collection and <strong>Loki</strong> for log aggregation,
+      with network device logs shipped directly into Loki. Traffic observability across the network is enabled through <strong>sFlow</strong>,
+      providing visibility into layer 2/3 flows without agent-based overhead.
+    </p>
 
     <div class="monitoring-gallery">
       <div class="monitoring-img-wrapper">
