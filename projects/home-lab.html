@@ -6,13 +6,13 @@ title: Home Lab
 <main>
 
   <p>
-    My home lab setup — where I tinker with servers, networks, and everything in between.
+    My home lab setup — where I tinker with servers, networks, and software projects.
   </p>
 
   <section class="lab-section">
     <h2>Highlights</h2>
     <ul class="lab-list">
-      <li><strong>Fully automated setup and configuration</strong> — reproducible infrastructure via Terraform and Ansible</li>
+      <li><strong>Fully automated setup and configuration</strong> — reproducible infrastructure via <a href="https://github.com/MattyO/self-hosted">Terraform and Ansible</a></li>
       <li><strong>Real-time observability</strong> — Prometheus and Loki with logs from network devices and sFlow traffic analytics</li>
       <li><strong>Segregated hosts via VLANs</strong> — Network isolation across dedicated VLANs for home, work, AI, and server workloads</li>
     </ul>
@@ -43,7 +43,7 @@ title: Home Lab
           <span class="tag">fortinet</span>
         </div>
         <p class="lab-description">
-          Enterprise-grade firewall — network segmentation, threat protection, and VPN.
+          Firewall — network segmentation, firewall policy, dhcp and ipsec tunneling.
         </p>
       </div>
 
@@ -74,19 +74,20 @@ title: Home Lab
   <section class="lab-section">
     <h2>Orchestration, Automation &amp; Containers</h2>
     <p>
-      The platform runs on <strong>Incus</strong> as a unified hypervisor and container runtime, supporting both VMs and LXC containers.
-      Infrastructure is provisioned with <strong>Terraform</strong> for declarative network resources and host configuration,
-      and managed with <strong>Ansible</strong> for idempotent, agentless system provisioning and drift remediation.
-      Network segmentation is enforced at the switch layer via VLANs, with firewall policies applied per-segment.
+      <strong>Ansible</strong> configures all network infrastructure across the FortiGate firewall, Cisco switch, and blade server.
+      Containers are run through <strong>Incus</strong>, which pools memory, CPU, and disk space across containers.
+      Containers can be deployed into any VLAN available on the network.
+      <strong>Terraform</strong> manages container creation, and <strong>Ansible</strong> handles their ongoing configuration and management.
     </p>
   </section>
 
   <section class="lab-section">
     <h2>Monitoring &amp; Observability</h2>
     <p>
-      Full-stack observability is provided by <strong>Prometheus</strong> for metrics collection and <strong>Loki</strong> for log aggregation,
-      with network device logs shipped directly into Loki. Traffic observability across the network is enabled through <strong>sFlow</strong>,
-      providing visibility into layer 2/3 flows without agent-based overhead.
+      <strong>Grafana</strong>, <strong>Prometheus</strong>, and <strong>Loki</strong> form the backbone of the lab's observability.
+      Logs from hosts, the switch, and firewall are shipped to Loki, while Prometheus collects host and service metrics.
+      Grafana provides unified dashboards using data sources from both Loki and Prometheus, offering a single location to monitor system status.
+      sFlow network telemetry is collected by a <strong>GoFlow2</strong> collector and forwarded into Loki for long-term log correlation.
     </p>
 
     <div class="monitoring-gallery">

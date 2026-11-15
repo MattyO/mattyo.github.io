@@ -64,6 +64,13 @@ p {
   line-height: 1.5;
 }
 
+a {
+  color: var(--accent);
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 @media screen and (min-width: 60em) {
   h1 {
     font-size: 3.1875rem;
@@ -625,6 +632,7 @@ svg {
 .svg-pan-container {
   position: relative;
   width: 100%;
+  margin-bottom: 2rem;
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
@@ -652,7 +660,7 @@ svg {
 /* Monitoring Gallery */
 .monitoring-gallery {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 1.5rem;
   width: 100%;
