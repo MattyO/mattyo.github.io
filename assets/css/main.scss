@@ -754,4 +754,47 @@ main > main { }
   background: var(--border);
 }
 
+.monitoring-caption {
+  margin: 0.5rem 0 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+}
+
+/* Two-column section layout (image left, description right) */
+
+.two-col-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.two-col-image {
+  flex-shrink: 0;
+}
+
+.two-col-description p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.two-col-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Smaller image variants */
+
+.hardware-thumb,
+.monitoring-thumb,
+.network-thumb {
+  margin: 0;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
 
