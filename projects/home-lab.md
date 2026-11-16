@@ -109,7 +109,7 @@ title: Home Lab
   </section>
 
   <div class="back-link">
-    <a href="/projects/">← Back to Projects</a>
+    <a href="/projects.html">← Back to Projects</a>
   </div>
 
 </main>

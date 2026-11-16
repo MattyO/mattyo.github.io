@@ -6,7 +6,7 @@ title: Projects
 <main>
 
   <div class="project-grid">
-    <a href="/projects/home-lab/" class="project-link">
+    <a href="/projects/home-lab.html" class="project-link">
       <div class="project-card">
         <h2>Home Lab</h2>
         <p class="project-tags">
@@ -21,7 +21,7 @@ title: Projects
       </div>
     </a>
 
-    <a href="/projects/local-ai-setup/" class="project-link">
+    <a href="/projects/local-ai-setup.html" class="project-link">
       <div class="project-card">
         <h2>Local AI Setup</h2>
         <p class="project-tags">

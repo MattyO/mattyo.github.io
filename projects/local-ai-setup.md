@@ -84,14 +84,14 @@ title: Local AI Setup
           through <strong>Terraform</strong> and <strong>Ansible</strong>.
         </p>
         <p>
-          See the <a href="/projects/home-lab/">Home Lab</a> page for the full network topology.
+          See the <a href="/projects/home-lab.html">Home Lab</a> page for the full network topology.
         </p>
       </div>
     </div>
   </section>
 
   <div class="back-link">
-    <a href="/projects/">← Back to Projects</a>
+    <a href="/projects.html">← Back to Projects</a>
   </div>
 
 </main>
